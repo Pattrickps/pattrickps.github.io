@@ -32,8 +32,6 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="typer.min.js"></script>
   </head>
 
   <body>
@@ -47,7 +45,9 @@
 					<!-- EDIT: title | email -->
 					<h3>Web Developer | Machine Learning Enthusist | <a href="mailto:pratik.sen.bmu@gmail.com" target="_blank">pratik.sen.bmu@gmail.com</a></h3>
 					
-					<h5 class="typewriter-effect"></h1>
+					<p>I'm <span class="typer">a designer</span>
+  <!-- add underline for typewriter effect-->
+  <span class="blink">_</span></p>
 				</div><!--/.col-lg-12 -->
 
 			</div><!--/.row -->
@@ -257,14 +257,49 @@
 
 
 <script>
-$(document).ready(function() {
-$(".typewriter-effect").typer({
-startDelay: 1000,
-repeatDelay: 1000,
-backspaceDelay: 1000,
-strings: [
-"Welcome to TechSini",
-"This is How Typewriter Effect Looks"
-] });
-});
+$(function() {
+        var index = 0,
+            count = 0;
+        var word = '';
+        var words = ["a programmer", "a developer", "a challenge-seeker", "a space enthusiast", "a hobby chef", "looking for work!"];
+        untype();
+
+        function type(word) {
+            setTimeout(function() {
+                if (word.length > 0) {
+                    $('.typer').append(word.shift());
+                    type(word);
+                } else if (word.length === 0) {
+                    pause();
+                }
+            }, 180)
+        }
+
+        function untype() {
+            setTimeout(function() {
+                word = $('.typer').html().split('');
+                word.pop();
+                if (word.length > 0) {
+                    $('.typer').empty().append(word);
+                    untype();
+                } else if (word.length === 0) {
+                    $('.typer').empty();
+                    nextWord();
+                }
+            }, 100);
+        }
+
+        function pause() {
+            setTimeout(function() {
+                untype();
+            }, 300);
+        }
+
+        function nextWord() {
+            index = count % 6;
+            count++;
+            word = words[index].split('');
+            type(word);
+        }
+    });
 </script>

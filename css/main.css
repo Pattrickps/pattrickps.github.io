@@ -304,3 +304,18 @@ body {
   -o-animation-name: fadeInUp;
   animation-name: fadeInUp;
   }
+
+
+.typer {
+  color: blue;
+}
+.blink {
+  color: #aaa;
+  animation: blink 0.6s infinite alternate;
+}
+@keyframes blink {
+  0% {opacity: 1;}
+  45% {opacity: 1;}
+  55% {opacity: 0;}
+  100% {opacity: 0;}
+}
