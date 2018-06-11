@@ -31,6 +31,9 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="typer.min.js"></script>
   </head>
 
   <body>
@@ -44,14 +47,11 @@
 					<!-- EDIT: title | email -->
 					<h3>Web Developer | Machine Learning Enthusist | <a href="mailto:pratik.sen.bmu@gmail.com" target="_blank">pratik.sen.bmu@gmail.com</a></h3>
 					
-					
+					<h5 class="typewriter-effect"></h1>
 				</div><!--/.col-lg-12 -->
-				
-				<div class="typewriter">
-                  <h1>The cat and the hat.</h1>
-                </div>
-				
+
 			</div><!--/.row -->
+			
 		</div><!--/.container -->
 	</div><!--/.header -->
 	
@@ -252,3 +252,16 @@
 	</div><!--/ #footer -->
   </body>
 </html>
+
+
+
+
+<script>
+$(document).ready(function() {
+$(".typewriter-effect").typer({
+strings: [
+"Welcome to TechSini",
+"This is How Typewriter Effect Looks"
+] });
+});
+</script>
